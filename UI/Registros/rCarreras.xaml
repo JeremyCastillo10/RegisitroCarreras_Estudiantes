@@ -1,0 +1,54 @@
+<Window x:Class="RegistroCarreras.UI.Registros.rCarreras"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroCarreras.UI.Registros"
+        mc:Ignorable="d"
+        Title="Registro de Carreras" Height="300" Width="300">
+    <Grid>
+
+        <StackPanel Orientation="Vertical" Margin="10"> 
+           
+           <!-- LibroId -->
+            <StackPanel Orientation="Vertical">
+                <Label Content="Id:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding CarreraId}" Width="100" />
+                    <Button Content="🔎 Buscar" Click="BuscarButton_Click" /> 
+                </StackPanel>
+            </StackPanel>
+
+
+            <Label Content="Nombre:"/>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Text="{Binding Nombre}" x:Name="NombreTextBox" Width="100">
+                    <ComboBox.Items> 
+                        <ComboBoxItem Content="Medicina" />
+                        <ComboBoxItem Content="Derecho" />
+                        <ComboBoxItem Content="Psicologia" />
+                        <ComboBoxItem Content="Ing.Sistemas" />
+                        <ComboBoxItem Content="Ing.Civil" />
+                        <ComboBoxItem Content="Arquitectura" />
+                        <ComboBoxItem Content="Turismo" />
+                    </ComboBox.Items>
+                </ComboBox>
+                </StackPanel>
+
+
+            <!-- BARRA DE BOTONES -->
+            <StackPanel 
+                        Margin="0,16,0,0"                      
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center" >
+                
+                <Button Content="🆕 Nuevo" Click="NuevoButton_Click"/>
+                <Button Content="✔ Guardar" Click="GuardarButton_Click" />
+                <Button Content="⛔ Eliminar" Click="EliminarButton_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

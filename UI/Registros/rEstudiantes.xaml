@@ -1,0 +1,73 @@
+<Window x:Class="RegistroEstudiantes.UI.Registros.rEstudiantes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroEstudiantes.UI.Registros"
+        mc:Ignorable="d"
+        Title="Registro de Estudiantes" Height="350" Width="300">
+    <Grid>
+
+        <StackPanel Orientation="Vertical" Margin="10"> 
+           
+           <!-- LibroId -->
+            <StackPanel Orientation="Vertical">
+                <Label Content="Id:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txtEstudianteId" Text="{Binding EstudianteId}" Width="100" />
+                    <Button Content="🔎 Buscar" Click="BuscarButton_Click" /> 
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical">
+                <Label Content="Nombres:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name = "txtNombres" Text="{Binding Nombres}" Width="100" />
+                </StackPanel>
+            </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                <Label Content="Email:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name = "txtEmail" Text="{Binding Email}" Width="100" />
+                </StackPanel>
+            </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                <Label Content="CarreraId:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name = "txtCarreraId" Text="{Binding CarreraId}" Width="100" />
+                </StackPanel>
+            </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                <Label Content="Activo:"/>
+
+                <StackPanel Orientation="Horizontal">
+		                 <CheckBox x:Name = "Ckbox" IsChecked="True"></CheckBox>
+                         <TextBlock>
+                         <Run FontWeight="Bold" Foreground="Green">Activo</Run>
+                         </TextBlock>
+                </StackPanel>
+            </StackPanel>
+
+
+            <!-- BARRA DE BOTONES -->
+            <StackPanel 
+                        Margin="0,16,0,0"                      
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center" >
+                
+                <Button Content="🆕 Nuevo" Click="NuevoButton_Click"/>
+                <Button Content="✔ Guardar" Click="GuardarButton_Click" />
+                <Button Content="⛔ Eliminar" Click="EliminarButton_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
